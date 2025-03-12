@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #2ecc71;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+#cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 250px;
+    height: 350px;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.top-symbol {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 50px; /* Aumentar tamaño del símbolo superior */
+}
+
+.bottom-symbol {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 50px; /* Aumentar tamaño del símbolo inferior */
+    transform: rotate(180deg);
+}
+
+.number {
+    font-size: 120px;  /* 📌 Ahora el número es mucho más grande */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heart, .diamond {
+    color: red;
+}
+
+.spade, .club {
+    color: black;
+}
