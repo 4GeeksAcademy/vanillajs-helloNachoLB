@@ -1,6 +1,12 @@
+
 window.onload = function() {
-    generateRandomCard(); // Genera una carta aleatoria al cargar la página
+    generateRandomCard();
+    setInterval(generateRandomCard, 10000);
 };
+
+document.getElementById("generateCard").addEventListener("click", generateRandomCard);
+document.getElementById("widthInput").addEventListener("input", updateCardSize);
+document.getElementById("heightInput").addEventListener("input", updateCardSize);
 
 function generateRandomCard() {
     const cardNumbers = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
@@ -19,9 +25,17 @@ function generateRandomCard() {
     let bottomSymbol = document.querySelector(".bottom-symbol");
     let numberElement = document.querySelector(".number");
 
-    // Aplicar valores a la carta
     cardElement.className = `card ${suits[randomSuit].className}`;
     topSymbol.innerText = suits[randomSuit].symbol;
     bottomSymbol.innerText = suits[randomSuit].symbol;
     numberElement.innerText = cardNumbers[randomNumber];
+}
+
+function updateCardSize() {
+    let width = document.getElementById("widthInput").value;
+    let height = document.getElementById("heightInput").value;
+    
+    let cardElement = document.querySelector(".card");
+    if (width) cardElement.style.width = `${width}px`;
+    if (height) cardElement.style.height = `${height}px`;
 }
